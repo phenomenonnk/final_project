@@ -1,0 +1,76 @@
+dashboard of Tableau_final_project_german_cars in tableau
+https://public.tableau.com/app/profile/nikolaos.k./viz/Final_project_Dashboard/Dashboard-FinalProject?publish=yes
+
+story of Tableau_final_project_german_cars in tableau
+https://public.tableau.com/app/profile/nikolaos.k./viz/Final_project_Story/Story-FinalProject?publish=yes
+
+We use the autoscout24-germany-dataset from Kaggle, we upload the dataset to Tableau from Data.
+First, we check from Data Source > Filters > Edit  the nulls and we exclude them from the columns that have
+nulls, model column, fuel column, gear column, hp column.
+Then, we check the numerical and categorical columns, if needed we convert them to different type.
+So, as numbers (measures) we have the columns hp, mileage, price and year and as strings we have the columns fuel, gear,
+make, model and offer type.
+Let's check some insights and trends from useful charts.
+
+barplot average mileage by fuel type: we could check the average mileage from the cars by fuel type, cars
+which have fuel type ethanol, diesel and LPG tend to be sold with high mileage, we can assume that the 
+owners of these cars use more these cars, so they are more satisfied and after long use and with high mileage
+decide to sell their cars. On the other hand owners of hydrogen cars and electric cars tend to sell their cars 
+with low mileage (one reason could be the lack of fuel stations, and the expensive costs of battery 
+change for electric cars). We could also notice that Electric/Diesel and Hydrogen cars are more expensive
+than the others and LPG, CNG and ethanol cars are cheaper than the rest.
+
+scatterplot mileage-price: we could check the distribution of the observations based on the combination
+mileage-price. The distribution seems to be negative exponential. An exponential trend line gives us an r2 score of 0,22.
+We could also notice some extreme outliers in the distribution for both of the variables.
+
+scatterplot hp-price: we could check the distribution of the observations based on the combination hp-price.
+The observations are fitted with a polynomial line, the R2 score is 0,61 for k=3.
+We can notice that the amounts have behavor like proportional amounts,
+so when the hp increases then the price tends to increase as well and the opposite
+when the hp decreases then the price tends to decrease, as well (in a polynomial way). Cars with high hp are
+more expensive and this is logical.
+
+barplot fuel_type - avg price: we could check the relationship between fuel_type and avg price.
+We had some similar insights in the barplot average mileage by fuel type. As we have already noticed 
+Electric/Diesel (avg price: 37605) and Hydrogen cars (avg price: 34990) are more expensive
+than the others and LPG (avg price: 11396), CNG (avg price: 12602) and ethanol (avg price: 3450) cars
+are cheaper than the rest. 
+We could create a chart for the number of cars per fuel type to have a clear picture. Indeed,
+the total numbers of Ethanol (2 cars), Hydrogen (1 car) and Electric/Diesel (53 cars) cars are small,
+so the samples are not representative and we cannot draw safe conclusions.  
+
+barplot gearbox - avg price: we could check the relationship between gearbox and avg price.
+Seems that the average price of Automatic cars has a significant difference with the 
+average price of the other 2 categories (manual and semi-automatic), so the automatic cars have almost
+triple average price from the other categories.
+
+barplot offer type - avg price: we could check the relationship between offer type and avg price.
+As we expected new cars are more expensive than the other categories on average. Although we could notice
+the presence of outliers in every category and especially in the new offer type because of the big
+difference between the average price and the median price (for instance in the new offer type category
+the average price is 66124 and the median price is 18550, almost triple, that shows us the existence 
+of big and lot of outliers)
+
+barplot make - avg price: we could check the relationship between different makes and avg price.
+The make Maybach has the most expensive cars on average (Maybach avg price: 608439). Makes Ferrari, 
+Lamborghini, Bentley and McLaren are also expensive makes. The cheapest make is the make Daihatsu
+(Daihatsu avg price: 4927).
+
+avg price line per year: we could check the relationship between avg price and years, it is a timeserie.
+The timeserie line follows linear regression (R2 score is almost 0,94) and the amounts are almost proportional.
+It is logical that the prices of older cars are cheaper and newer cars are more expensive, respectively.
+if we were candidate buyers of a car and we were looking for cheap opportunities,
+then we should check cars from the year 2016, because the point of the avg price this year is below the line and
+the distance between the point of the average price in 2016 and the line is the biggest distance we meet. 
+
+scatterplots hp, mileage vs price: it is a combination of the 2 plots,
+scatterplot hp-price and scatterplot mileage-price, in the same graph - chart and 
+we have already discussed the insights.
+
+barplot fuel type, gear type vs avg price: it is a combination of 2 plots, 
+there is information about the fuel type and the gear type.
+The most expensive cars are the electric/diesel - automatic cars (avg price: 38259).
+
+We also use some KPIs: the median price, the average price, the 95th percentile price and the max price,
+so we can understand better the dataset.
